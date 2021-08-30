@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="XmlReceipt">
+
+        <!-- add/modify company details -->
+        <t t-jquery="t[t-if='receipt.company.contact_address']" t-operation="after">
+            <t t-if='widget.pos.company.street'>
+                <div><t t-esc='receipt.company.street' /></div>
+            </t>
+            <t t-if='widget.pos.company.street2'>
+                <div><t t-esc='receipt.company.street2' /></div>
+            </t>
+            <t t-if='widget.pos.company.zip'>
+                <t t-if='widget.pos.company.city'>
+                    <div><t t-esc='receipt.company.zip' /> <t t-esc='receipt.company.city' /></div>
+                </t>
+            </t>
+        </t>
+        <t t-jquery="t[t-if='receipt.company.email']" t-operation="replace" />
+        <t t-jquery="t[t-if='receipt.company.vat']" t-operation="replace" />
+        <t t-jquery="t[t-if='receipt.company.website']" t-operation="after" >
+            <t t-if='receipt.company.vat'>
+                <div>VAT: <t t-esc='receipt.company.vat' /></div>
+            </t>
+        </t>
+
+    </t>
+
+
+    <t t-extend="PosTicket">
+
+        <!-- add logo -->
+        <t t-jquery="div[class='pos-sale-ticket']" t-operation="prepend">
+            <div class="pos-center-align">
+                <t t-if='receipt.company.logo'>
+                    <img t-att-src='receipt.company.logo' style='max-width:75%' alt="Logo"/>
+                    <br/>
+                </t>
+                <t t-if='!receipt.company.logo'>
+                    <h1><t t-esc='receipt.company.name' /></h1>
+                    <br/>
+                </t>
+            </div>
+        </t>
+
+        <!-- add company details -->
+        <t t-jquery="div[class='receipt-phone']" t-operation="replace">
+            <t t-if='widget.pos.company.street'>
+                <div><t t-esc='receipt.company.street' /></div>
+            </t>
+            <t t-if='widget.pos.company.street2'>
+                <div><t t-esc='receipt.company.street2' /></div>
+            </t>
+            <t t-if='widget.pos.company.zip'>
+                <t t-if='widget.pos.company.city'>
+                    <div><t t-esc='receipt.company.zip' /> <t t-esc='receipt.company.city' /></div>
+                </t>
+            </t>
+            <t t-if='receipt.company.vat'>
+                <div>VAT: <t t-esc='receipt.company.vat' /></div>
+            </t>
+            
+            <t t-if='receipt.company.website'>
+                <div><t t-esc='receipt.company.website' /></div>
+            </t>
+            <br /><br />
+        </t>
+        <t t-jquery="div[class='receipt-user']" t-operation="replace">
+        </t>
+
+    </t>
+</templates>

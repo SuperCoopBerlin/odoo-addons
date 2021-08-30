@@ -1,0 +1,1 @@
+This module extends the POS receipt for SuperCoop Berlin eG
