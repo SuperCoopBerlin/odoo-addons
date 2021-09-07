@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+2021-Today Supercoop Berlin (https://www.supercoop.de)
+@author: Thilo Krachenfels
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+Extended version of pos_warning_exiting from GRAP (http://www.grap.coop)
+    Initial author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+-->
+
+<odoo>
+
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pos_exiting_dialog/static/src/js/gui.js"/>
+            <script type="text/javascript" src="/pos_exiting_dialog/static/src/js/devices.js"/>
+        </xpath>
+    </template>
+
+</odoo>

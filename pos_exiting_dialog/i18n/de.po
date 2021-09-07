@@ -1,0 +1,130 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_exiting_dialog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-07 13:52+0000\n"
+"PO-Revision-Date: 2021-09-07 15:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:34
+#, python-format
+msgid " - Table: "
+msgstr " - Tabelle: "
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:42
+#, python-format
+msgid "Draft Orders"
+msgstr "Unabgeschlossene Aufträge"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:74
+#, python-format
+msgid "End of day"
+msgstr "Kassenschnitt"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:70
+#, python-format
+msgid ""
+"Get payment terminal totals or trigger end of day before leaving the PoS?"
+msgstr "Kassenbericht oder Kassenschnitt am EC-Terminal durchführen?"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:149
+#, python-format
+msgid ""
+"It seems that you do not have a network connection at the moment. If you "
+"close this window, it will not be possible to re-sell until you get your "
+"connection back."
+msgstr ""
+"Es scheint als bestünde keine Internetverbindung. Nach dem Schließen dieses "
+"Fensters wird es nicht möglich sein weitere Verkäufe zu tätigen bis die "
+"Verbindung wieder hergestellt ist."
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:148
+#, python-format
+msgid "Network Connection Lost"
+msgstr "Netzwerkverbindung verloren"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/devices.js:23
+#: code:addons/pos_exiting_dialog/static/src/js/devices.js:44
+#, python-format
+msgid "Operation successful, please confirm"
+msgstr "Aktion erfolgreich abgeschlossen, bitte bestätigen"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:30
+#, python-format
+msgid "Order #"
+msgstr "Auftrag #"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:99
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:116
+#, python-format
+msgid "Please wait"
+msgstr "Bitte warten"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:100
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:117
+#, python-format
+msgid "Please wait until receipt was printed"
+msgstr "Bitte warten bis der Beleg gedruckt wurde"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:66
+#, python-format
+msgid "Trigger another terminal action?"
+msgstr "Weitere Aktion am EC-Terminal durchführen?"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:64
+#, python-format
+msgid "Trigger payment terminal action?"
+msgstr "Aktion am EC-Terminal durchführen?"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:73
+#, python-format
+msgid "Turnover totals"
+msgstr "Kassenbericht"
+
+#. module: pos_exiting_dialog
+#. openerp-web
+#: code:addons/pos_exiting_dialog/static/src/js/gui.js:43
+#, python-format
+msgid ""
+"You have some draft unpaid orders. You can exit temporarily the Point of "
+"Sale, but you will loose that orders if you close the session: "
+msgstr ""
+"Es gibt unbezahlte Aufträge. Sie können den Point of Sale verlassen, werden "
+"die Aufträge aber beim Kassenabschluss verlieren: "
