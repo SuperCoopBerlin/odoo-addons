@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<template id="scb_pricetag_supermarket">
+		<t t-foreach="category_data['lines']" t-as="line">
+
+			<t t-foreach="line.quantity" t-as="q">
+				<div style="border: 1px solid; width: 50%; height: 4cm;">
+					<div>
+						<b><t t-esc="line.product_id.name"/></b>
+					</div>
+					<div>
+						<t t-if="line.product_id.code">Code: <t t-esc="line.product_id.code"/><br/></t>
+					</div>
+					<div style="display: -webkit-box;">
+						<div>
+							<t t-if="line.product_id.barcode">EAN: <t t-esc="line.product_id.barcode"/><br/></t>
+							<img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', line.product_id.barcode, 400, 100)" style="width: 50mm; height: 8mm;"/>
+						</div>
+						<div class="product_price" style="font-size: 1.5cm;">
+							<t t-esc="'%0.2f' % (line.product_id.list_price)"/>€
+						</div>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>
+
