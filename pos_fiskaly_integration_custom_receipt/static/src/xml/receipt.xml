@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="XmlReceipt">
+        <t t-jquery="div[class='tss_details']" t-operation="replace">
+            <div class="pos-center-align">
+                Fiskal-Informationen (TSE)
+            </div>
+            <div class="tss_details">
+                <t t-if="order.tss_details">
+                    <t t-foreach="order.tss_details" t-as="detail">
+                        <!--
+                        'TSE-Transaktionsnummer',
+                        'TSE Signaturzähler',
+                        'TSE-Beginn',
+                        'TSE-Ende',
+                        'TSE-Seriennummer',
+                        'TSE Signatur',
+                        'TSE-Hashalgorithmus',
+                        'TSE öffentlicher Schlüssel',
+                        -->
+                        <!--
+                        <t t-if="detail_value['key'] == 'TSE-Transaktionsnummer' ||
+                                 detail_value['key'] == 'TSE Signaturzähler' ||
+                                 detail_value['key'] == 'TSE-Beginn' ||
+                                 detail_value['key'] == 'TSE-Ende' ||
+                                 detail_value['key'] == 'TSE-Seriennummer' ||
+                                 detail_value['key'] == 'TSE Signatur'">
+                            <t t-esc="detail_value['key']"/>: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        -->
+                         <t t-if="detail_value['key'] == 'TSE-Transaktionsnummer'">
+                                <left> Transakt.-Nr.: <t t-esc="detail_value['value']"/> </left>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE Signaturzähler'">
+                                <left> Sign.-Zähler: <t t-esc="detail_value['value']"/> <br/> </left>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Beginn'">
+                                <left> Start: <t t-esc="detail_value['value']"/> </left>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Ende'">
+                                <left> Ende: <t t-esc="detail_value['value']"/> <br/> </left>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Seriennummer'">
+                                <left> SerienNr.: <t t-esc="detail_value['value']"/> <br/> </left>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE Signatur'">
+                                <left> Prüfwert: <t t-esc="detail_value['value']"/> </left>
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <t t-foreach="order.get_static_offline_tss_details()" t-as="tss_key">
+                        <!--
+                        <t t-if="tss_key == 'TSE-Transaktionsnummer' ||
+                                 tss_key == 'TSE Signaturzähler' ||
+                                 tss_key == 'TSE-Beginn' ||
+                                 tss_key == 'TSE-Ende' ||
+                                 tss_key == 'TSE-Seriennummer' ||
+                                 tss_key == 'TSE Signatur'">
+                            <t t-esc="tss_key"/>: offline <br/>
+                        </t>
+                        -->
+                        <t t-if="tss_key == 'TSE-Transaktionsnummer'">
+                            <left> Transakt.-Nr.: offline </left>
+                        </t>
+                        <t t-if="tss_key == 'TSE Signaturzähler'">
+                            <left> Sign.-Zähler: offline <br/> </left>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Beginn'">
+                                <left> Start: offline </left>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Ende'">
+                                <left> Ende: offline <br/> </left>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Seriennummer'">
+                                <left> SerienNr.: offline <br/> </left>
+                        </t>
+                        <t t-if="tss_key == 'TSE Signatur'">
+                                <left> Prüfwert: offline </left>
+                        </t>
+                    </t>
+                </t>
+            </div>
+        </t>
+    </t>
+
+
+    <t t-extend="PosTicket">
+        <!-- <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace"> -->
+
+        <t t-jquery="div[class='tss_details']" t-operation="replace">
+            <div class="pos-center-align">
+                Fiskal-Informationen (TSE)
+            </div>
+            <div class="tss_details" style="text-align: left;">
+                <t t-if="order.tss_details">
+                    <t t-foreach="order.tss_details" t-as="detail">
+                        <t t-if="detail_value['key'] == 'TSE-Transaktionsnummer'">
+                                Transaktionsnr.: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE Signaturzähler'">
+                                Signaturzähler: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Beginn'">
+                                Beginn: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Ende'">
+                                Ende: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE-Seriennummer'">
+                                Seriennr.: <t t-esc="detail_value['value']"/> <br/>
+                        </t>
+                        <t t-if="detail_value['key'] == 'TSE Signatur'">
+                                Prüfwert: <t t-esc="detail_value['value']"/>
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <t t-foreach="order.get_static_offline_tss_details()" t-as="tss_key">
+                        <t t-if="tss_key == 'TSE-Transaktionsnummer'">
+                                Transaktionsnr.: offline <br/>
+                        </t>
+                        <t t-if="tss_key == 'TSE Signaturzähler'">
+                                Signaturzähler: offline <br/>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Beginn'">
+                                Start: offline <br/>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Ende'">
+                                Ende: offline <br/>
+                        </t>
+                        <t t-if="tss_key == 'TSE-Seriennummer'">
+                                Seriennr.: offline <br/>
+                        </t>
+                        <t t-if="tss_key == 'TSE Signatur'">
+                                Prüfwert: offline
+                        </t>
+                    </t>
+                </t>
+            </div>
+        </t>
+    </t>
+
+</templates>

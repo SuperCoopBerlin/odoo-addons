@@ -1,0 +1,1 @@
+This module extends the POS receipt lines of the Fiskaly integration for SuperCoop Berlin eG
