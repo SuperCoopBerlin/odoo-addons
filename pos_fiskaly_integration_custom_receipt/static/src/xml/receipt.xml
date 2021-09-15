@@ -35,7 +35,7 @@
                                 <left> Sign.-Zähler: <t t-esc="detail_value['value']"/> <br/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE-Beginn'">
-                                <left> Start: <t t-esc="detail_value['value']"/> </left>
+                                <left> Start: <t t-esc="detail_value['value']"/> <br/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE-Ende'">
                                 <left> Ende: <t t-esc="detail_value['value']"/> <br/> </left>
@@ -67,7 +67,7 @@
                             <left> Sign.-Zähler: offline <br/> </left>
                         </t>
                         <t t-if="tss_key == 'TSE-Beginn'">
-                                <left> Start: offline </left>
+                                <left> Start: offline <br/> </left>
                         </t>
                         <t t-if="tss_key == 'TSE-Ende'">
                                 <left> Ende: offline <br/> </left>
