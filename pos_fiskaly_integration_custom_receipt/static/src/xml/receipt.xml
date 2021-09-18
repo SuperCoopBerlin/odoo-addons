@@ -32,16 +32,16 @@
                                 <left> Transakt.-Nr.: <t t-esc="detail_value['value']"/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE Signaturzähler'">
-                                <left> Sign.-Zähler: <t t-esc="detail_value['value']"/> <br/> </left>
+                                <left> Sign.-Zähler: <t t-esc="detail_value['value']"/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE-Beginn'">
-                                <left> Start: <t t-esc="detail_value['value']"/> <br/> </left>
+                                <left> Start: <t t-esc="detail_value['value']"/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE-Ende'">
-                                <left> Ende: <t t-esc="detail_value['value']"/> <br/> </left>
+                                <left> Ende: <t t-esc="detail_value['value']"/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE-Seriennummer'">
-                                <left> SerienNr.: <t t-esc="detail_value['value']"/> <br/> </left>
+                                <left> SerienNr.: <t t-esc="detail_value['value']"/> </left>
                         </t>
                         <t t-if="detail_value['key'] == 'TSE Signatur'">
                                 <left> Prüfwert: <t t-esc="detail_value['value']"/> </left>
@@ -64,16 +64,16 @@
                             <left> Transakt.-Nr.: offline </left>
                         </t>
                         <t t-if="tss_key == 'TSE Signaturzähler'">
-                            <left> Sign.-Zähler: offline <br/> </left>
+                            <left> Sign.-Zähler: offline </left>
                         </t>
                         <t t-if="tss_key == 'TSE-Beginn'">
-                                <left> Start: offline <br/> </left>
+                                <left> Start: offline </left>
                         </t>
                         <t t-if="tss_key == 'TSE-Ende'">
-                                <left> Ende: offline <br/> </left>
+                                <left> Ende: offline </left>
                         </t>
                         <t t-if="tss_key == 'TSE-Seriennummer'">
-                                <left> SerienNr.: offline <br/> </left>
+                                <left> SerienNr.: offline </left>
                         </t>
                         <t t-if="tss_key == 'TSE Signatur'">
                                 <left> Prüfwert: offline </left>
