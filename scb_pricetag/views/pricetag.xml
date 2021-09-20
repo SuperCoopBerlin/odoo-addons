@@ -1,29 +1,40 @@
 <?xml version="1.0"?>
 <odoo>
-
 	<template id="scb_pricetag_supermarket">
 		<t t-foreach="category_data['lines']" t-as="line">
 
 			<t t-foreach="line.quantity" t-as="q">
-				<div style="border: 1px solid; width: 50%; height: 4cm;">
-					<div>
-						<b><t t-esc="line.product_id.name"/></b>
+				<div style="border: 1px solid; width: 60mm; height: 48mm; padding-left: 2mm; padding-right: 2mm; page-break-inside: avoid; display: -webkit-box; -webkit-box-orient: vertical;">
+					<div style="height: 3mm;">
 					</div>
+
 					<div>
-						<t t-if="line.product_id.code">Code: <t t-esc="line.product_id.code"/><br/></t>
+						<span style="font-weight: bold; font-size: 1.3rem;"><t t-esc="line.product_id.name"/></span>
 					</div>
+
+					<!-- Spacer -->
+					<div style="-webkit-box-flex: 1;"/>
+
 					<div style="display: -webkit-box;">
-						<div>
-							<t t-if="line.product_id.barcode">EAN: <t t-esc="line.product_id.barcode"/><br/></t>
-							<img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', line.product_id.barcode, 400, 100)" style="width: 50mm; height: 8mm;"/>
+						<div style="-webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient: vertical;">
+							<!-- Spacer and Base Price-->
+							<div style="-webkit-box-flex: 1;">
+								<t t-if="line.product_id.base_price_unit"><t t-esc="line.product_id.base_lst_price_display"/></t>
+							</div>
+
+							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 50mm; height: 8mm;" />
+							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 50mm; height: 8mm;" />
 						</div>
 						<div class="product_price" style="font-size: 1.5cm;">
 							<t t-esc="'%0.2f' % (line.product_id.list_price)"/>€
 						</div>
+					</div>
+					<div style="height: 4mm; font-size: 3mm;">
+						Gedruckt am
+						<span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
 					</div>
 				</div>
 			</t>
 		</t>
 	</template>
 </odoo>
-
