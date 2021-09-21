@@ -1,7 +1,7 @@
 {
     'name': "scb_pricetag",
     'summary': """Pricetag Template for SuperCoop Berlin""",
-
+    "depends": ["product", "website_sale"],
     'description': """""",
 
     'author': "SuperCoop Berlin",

@@ -4,12 +4,12 @@
 		<t t-foreach="category_data['lines']" t-as="line">
 
 			<t t-foreach="line.quantity" t-as="q">
-				<div style="border: 1px solid; width: 60mm; height: 48mm; padding-left: 2mm; padding-right: 2mm; page-break-inside: avoid; display: -webkit-box; -webkit-box-orient: vertical;">
+				<div style="border: 1px solid; width: 90mm; height: 48mm; padding-left: 2mm; padding-right: 2mm; page-break-inside: avoid; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">
 					<div style="height: 3mm;">
 					</div>
 
-					<div>
-						<span style="font-weight: bold; font-size: 1.3rem;"><t t-esc="line.product_id.name"/></span>
+					<div style="height: 1.5cm; overflow: hidden;">
+						<span style="font-weight: bold; font-size: 14pt;"><t t-esc="line.product_id.name"/></span>
 					</div>
 
 					<!-- Spacer -->
@@ -19,14 +19,14 @@
 						<div style="-webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient: vertical;">
 							<!-- Spacer and Base Price-->
 							<div style="-webkit-box-flex: 1;">
-								<t t-if="line.product_id.base_price_unit"><t t-esc="line.product_id.base_lst_price_display"/></t>
+								<t t-if="line.product_id.base_price_unit"><t t-esc="line.product_id.pricetag_base_price_display"/></t>
 							</div>
 
-							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 50mm; height: 8mm;" />
-							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 50mm; height: 8mm;" />
+							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 40mm; height: 8mm;" />
+							<img t-if="line.product_id.barcode and len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', line.product_id.barcode, 400, 100)" style="vertical-align: text-bottom; width: 40mm; height: 8mm;" />
 						</div>
 						<div class="product_price" style="font-size: 1.5cm;">
-							<t t-esc="'%0.2f' % (line.product_id.list_price)"/>€
+							<t t-esc="'%0.2f' % (line.product_id.pricetag_sale_price)"/>€
 						</div>
 					</div>
 					<div style="height: 4mm; font-size: 3mm;">
