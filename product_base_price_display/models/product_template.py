@@ -15,4 +15,4 @@ class ProductTemplate(models.Model):
         for p in self:
             base_lst_price = Decimal(p.lst_price) * Decimal(p.base_price_factor)
             # TODO(Leon Handreke): Use currency_id here
-            p.base_lst_price_display = '%s€/%s' % (base_lst_price.quantize(Decimal("1.000")), p.base_price_unit)
+            p.base_price_display = '%s€/%s' % (base_lst_price.quantize(Decimal("1.000")), p.base_price_unit)
