@@ -33,7 +33,7 @@ odoo.define('pos_custom_receipt.models', function (require) {
     });
 
 
-    models.Orderline.extend({
+    models.Orderline = models.Orderline.extend({
         //Change wrapping width
         generate_wrapped_product_name: function() {
             var MAX_LENGTH = 36; // 44 * line ratio of .82
