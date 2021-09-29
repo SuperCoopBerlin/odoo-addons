@@ -5,6 +5,7 @@
         <!-- Make receipt wider (initial value 40, max value 48)-->
         <t t-jquery="receipt" t-operation="attributes">
             <attribute name="width">44</attribute>
+            <attribute name="value-decimals-separator">,</attribute>
         </t>
 
         <!-- Add/modify company details -->
