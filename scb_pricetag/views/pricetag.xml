@@ -37,4 +37,30 @@
 			</t>
 		</t>
 	</template>
+
+	<!-- Not really a pricetag, we just use it to print the changed prices for fresh products every day -->
+	<template id="scb_pricetag_list_fresh">
+		<div style="font-size: 14pt; padding: 5mm;">
+			Gedruckt am
+			<span t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M')"/>
+		</div>
+
+		<table>
+			<t t-foreach="category_data['lines']" t-as="line">
+
+				<t t-foreach="line.quantity" t-as="q">
+					<tr style="border: 1px solid; padding: 1mm; page-break-inside: avoid;">
+
+						<td style="white-space: nowrap; overflow: hidden;">
+							<span style="font-weight: bold; font-size: 14pt;"><t t-esc="line.product_id.name"/></span>
+						</td>
+
+						<td style="font-size: 14pt; padding-left: 5mm;">
+							<t t-esc="'%0.2f' % (line.product_id.pricetag_sale_price)"/>€/kg
+						</td>
+					</tr>
+				</t>
+			</t>
+		</table>
+	</template>
 </odoo>
