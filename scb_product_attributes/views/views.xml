@@ -1,16 +1,14 @@
 <odoo>
-	<record model="ir.ui.view" id="beesdoo_product_form">
+	<record model="ir.ui.view" id="scb_product_form">
 		<field name="name">bees.product.template.form</field>
 		<field name="model">product.template</field>
 		<field name="inherit_id" ref="product.product_template_only_form_view"/>
 		<field name="arch" type="xml">
-			<xpath expr="//group[@name='inventory']/.." position="after">
-				<page string="SuperCoop Label">
-					<group>
-						<field name="organic_label"/>
-					</group>
-			</page>
-		</xpath>
-	</field>
-</record>
+			<xpath expr="//field[@name='barcode']" position="after">
+				<field name="product_importer_script_behavior"/>
+				<field name="shelf_location_sale"/>
+				<field name="shelf_location_storage"/>
+			</xpath>
+		</field>
+	</record>
 </odoo>
