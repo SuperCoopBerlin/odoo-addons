@@ -289,6 +289,9 @@
             </line>
         </t>
 
+        <!-- Remove total taxes line-->
+        <t t-jquery="line:contains('Total Taxes')" t-operation="replace">
+        </t>
 
     </t>
 
