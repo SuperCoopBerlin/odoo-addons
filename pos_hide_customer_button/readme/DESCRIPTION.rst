@@ -1,0 +1,1 @@
+Adapt point of sale to hide customer buttons (for privacy reasons)
