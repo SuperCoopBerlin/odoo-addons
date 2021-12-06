@@ -1,0 +1,1 @@
+Autoconnect to customer facing display when PoS session is started or when connection is lost
